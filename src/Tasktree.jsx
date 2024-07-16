@@ -1,9 +1,13 @@
+import { TaskRoutes } from "./routes/TaskRoutes";
+
 export const Tasktree = () => {
 
    
 
 
    return (
-      <div>Tasktree</div>
+      <>
+         <TaskRoutes/>
+      </>
    )
 }
