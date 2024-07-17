@@ -1,10 +1,11 @@
 import { TaskAdd } from "../components/TaskAdd";
+import { TaskList } from "../components/TaskList";
 
 export const HomePage = () => {
    return (
       <>
-         <h1>HomePage</h1>
-         <TaskAdd />
+         <TaskAdd/>
+         <TaskList />
       </>
    )
 }
