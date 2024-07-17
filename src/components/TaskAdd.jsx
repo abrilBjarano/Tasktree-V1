@@ -9,7 +9,7 @@ export const TaskAdd = () => {
          <input
             type="text" 
             placeholder="What needs to be done? ✏️" 
-            className="form-control mt-3"
+            className="form-control mb-4"
             value={ inputValue } 
             onChange={ onInputChange } />
             
