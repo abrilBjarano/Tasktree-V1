@@ -3,18 +3,32 @@ import { TaskContext } from "./TaskContext";
 import { taskReducer } from "../taskReducer";
 
 
-const initialState = [
-   {
-      id: new Date().getDate() * 3,
-      description: 'Crear Tasktree',
-      done: false,  
-   },
-   {
-      id: new Date().getDate() * 2,
-      description: 'Ir a correr',
-      done: false,  
-   },
-]
+const initialState = {
+   incompleted: [
+      {  
+         id: new Date().getDate() * 3,
+         description: 'Crear Tasktree',
+         done: false,  
+      },
+      {
+         id: new Date().getDate() * 2,
+         description: 'Ir a correr',
+         done: false,  
+      }
+   ],
+   completed: [
+      {
+         id: new Date().getDate() * 5,
+         description: 'Lavar mi Miatad',
+         done: true,
+      },
+      {
+         id: new Date().getDate() * 4,
+         description: 'Comprar los boletos de avión a Brazil',
+         done: true
+      }
+   ]
+}
 
 
 export const TaskProvider = ({ children }) => {
