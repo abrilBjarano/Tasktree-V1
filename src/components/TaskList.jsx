@@ -1,4 +1,8 @@
-export const TaskList = ({ tasks }) => {
+import { useLocation } from "react-router-dom";
+
+export const TaskList = ({ tasks, img }) => {
+
+   const location = useLocation();
 
    return (
       <ul className="list-group">
@@ -7,13 +11,16 @@ export const TaskList = ({ tasks }) => {
                className="list-group-item d-flex justify-content-between align-items-center"
                key={ task.id }>
 
-                  { task.description }
+                  {( location.pathname === '/') 
+                        ?
+                           <>
+                              { task.description }
+                              <button className="btn btn-danger">X</button>
+                           </>
 
-                  <div className="">
-                     <button className="btn btn-danger">
-                        X
-                     </button>
-                  </div>
+                        : <del> {task.description} </del>
+                  }
+
             </li>
          ))}
       </ul>

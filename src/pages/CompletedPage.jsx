@@ -1,7 +1,16 @@
+import { useContext } from "react";
+import { TaskList } from "../components/TaskList";
+import { TaskContext } from "../context/TaskContext";
+import { DeleteAllBtn } from "../components/DeleteAllBtn";
+
 export const CompletedPage = () => {
+
+   const { tasks } = useContext( TaskContext );
+
    return (
       <>
-         <h1>CompletedPage</h1>
+         <DeleteAllBtn />
+         <TaskList tasks={ tasks.completed }/>
       </>
    )
 }
