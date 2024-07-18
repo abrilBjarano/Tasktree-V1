@@ -4,7 +4,7 @@ import { taskReducer } from "../taskReducer";
 
 
 const initialState = {
-   incompleted: [
+   incomplete: [
       {  
          id: new Date().getDate() * 3,
          description: 'Crear Tasktree',
