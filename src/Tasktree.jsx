@@ -14,7 +14,7 @@ export const Tasktree = () => {
          <Navbar/>
 
 
-         <div className="mx-5 mx-lg-15">
+         <div className="mx-lg-12 mx-5">
             <TaskRoutes/>
          </div>
 

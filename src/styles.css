@@ -1,6 +1,14 @@
 @media (min-width: 992px) {
-   .mx-lg-15 {
-      margin-left: 15rem !important;
-      margin-right: 15rem !important;
+   .mx-lg-12 {
+      margin-left: 12rem !important;
+      margin-right: 12rem !important;
    }
 }
+
+/* @media (min-width: 768px) {
+   .mx-md-6 {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+   }
+} */
+
