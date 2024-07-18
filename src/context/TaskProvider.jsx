@@ -19,7 +19,7 @@ const initialState = {
    completed: [
       {
          id: new Date().getDate() * 5,
-         description: 'Lavar mi Miatad',
+         description: 'Lavar mi Miata',
          done: true,
       },
       {
