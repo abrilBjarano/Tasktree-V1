@@ -1,8 +1,17 @@
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
+import { TaskContext } from "../context/TaskContext";
 
 export const TaskList = ({ tasks, img }) => {
 
+   const { deleteTask } = useContext( TaskContext );
    const location = useLocation();
+
+
+   const onBtnClick = ( task ) => {
+      deleteTask( task.id );
+   };
+
 
    return (
       <ul className="list-group">
@@ -15,7 +24,12 @@ export const TaskList = ({ tasks, img }) => {
                         ?
                            <>
                               { task.description }
-                              <button className="btn btn-danger">X</button>
+
+                              <button
+                                 onClick={ () => onBtnClick( task ) }
+                                 className="btn btn-danger">
+                                    X
+                              </button>
                            </>
 
                         : <del> {task.description} </del>

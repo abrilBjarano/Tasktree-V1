@@ -7,6 +7,12 @@ export const taskReducer = ( state, action ) => {
             incomplete: [ ...state.incomplete, action.payload ]
          }
       
+      case 'Delete task':
+         return {
+            ...state,
+            incomplete: state.incomplete.filter( task => task.id !== action.payload )
+         }
+      
       default:
          return state;
    }
