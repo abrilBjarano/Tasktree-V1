@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TaskContext } from "../context/TaskContext";
 
 export const useForm = () => {
 
    const [ inputValue, setInputValue ] = useState('');
+   const { addTask } = useContext( TaskContext );
 
    const onInputChange = ({ target }) => {
       setInputValue( target.value );
@@ -12,8 +14,14 @@ export const useForm = () => {
       event.preventDefault();
       if( inputValue.trim().length < 0 ) return;
 
-      const newValue = inputValue.trim();
-      console.log( newValue );
+      const newValue = {
+         id: new Date().getTime() * 2,
+         description: inputValue.trim(),
+         done: false
+      }
+
+      addTask( newValue );
+
       setInputValue('');
    };
 

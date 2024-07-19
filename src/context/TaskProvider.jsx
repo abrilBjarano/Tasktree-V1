@@ -6,24 +6,24 @@ import { taskReducer } from "../taskReducer";
 const initialState = {
    incomplete: [
       {  
-         id: new Date().getDate() * 3,
+         id: new Date().getTime() * 3,
          description: 'Crear Tasktree',
          done: false,  
       },
       {
-         id: new Date().getDate() * 2,
+         id: new Date().getTime() * 2,
          description: 'Ir a correr',
          done: false,  
       }
    ],
    completed: [
       {
-         id: new Date().getDate() * 5,
+         id: new Date().getTime() * 5,
          description: 'Lavar mi Miata',
          done: true,
       },
       {
-         id: new Date().getDate() * 4,
+         id: new Date().getTime() * 4,
          description: 'Comprar los boletos de avión a Brazil',
          done: true
       }
@@ -36,8 +36,16 @@ export const TaskProvider = ({ children }) => {
    const [ tasks, dispatch ] = useReducer( taskReducer, initialState );
 
 
+   const addTask = ( newTask ) => {
+      dispatch({
+         type: 'Add task',
+         payload: newTask
+      })
+   };
+
+
    return (
-      <TaskContext.Provider value={{ tasks }}>
+      <TaskContext.Provider value={{ tasks, addTask }}>
          { children }
       </TaskContext.Provider>
    )
