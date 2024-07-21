@@ -50,9 +50,15 @@ export const TaskProvider = ({ children }) => {
       })
    };
 
+   const deleteCompleted = () => {
+      dispatch({
+         type: 'Delete completed'
+      })
+   };
+
 
    return (
-      <TaskContext.Provider value={{ tasks, addTask, deleteTask }}>
+      <TaskContext.Provider value={{ tasks, addTask, deleteTask, deleteCompleted }}>
          { children }
       </TaskContext.Provider>
    )

@@ -13,6 +13,12 @@ export const taskReducer = ( state, action ) => {
             incomplete: state.incomplete.filter( task => task.id !== action.payload )
          }
       
+      case 'Delete completed':
+         return {
+            ...state,
+            completed: []
+         }
+      
       default:
          return state;
    }
