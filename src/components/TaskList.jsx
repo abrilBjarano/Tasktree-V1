@@ -4,7 +4,7 @@ import { TaskContext } from "../context/TaskContext";
 
 export const TaskList = ({ img }) => {
 
-   const { tasks, deleteTask } = useContext( TaskContext );
+   const { tasks, deleteTask, toggleTask } = useContext( TaskContext );
    const location = useLocation();
 
 
@@ -14,6 +14,10 @@ export const TaskList = ({ img }) => {
 
    const onBtnClick = ( task ) => {
       deleteTask( task.id );
+   };
+
+   const onClickTask = ( task ) => {
+      toggleTask( task.id );
    };
 
 
@@ -27,7 +31,10 @@ export const TaskList = ({ img }) => {
                   {( location.pathname === '/') 
                         ?
                            <>
-                              { task.description }
+                              <div 
+                                 onClick={ () => onClickTask( task )}>
+                                    { task.description }
+                              </div>
 
                               <button
                                  onClick={ () => onBtnClick( task ) }
@@ -36,7 +43,9 @@ export const TaskList = ({ img }) => {
                               </button>
                            </>
 
-                        : <del> { task.description } </del>
+                        : <del onClick={ () => onClickTask( task )}> 
+                              { task.description } 
+                           </del>
                   }
 
             </li>

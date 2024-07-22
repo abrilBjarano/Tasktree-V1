@@ -10,6 +10,13 @@ export const taskReducer = ( state, action ) => {
       case 'Delete completed':
          return state.filter( task => task.done === false );
       
+      case 'Toggle task':
+         return state.map( task => 
+            ( task.id === action.payload )
+               ? { ...task, done: !task.done }
+               : task
+         )
+      
       default:
          return state;
    }
