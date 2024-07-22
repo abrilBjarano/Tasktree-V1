@@ -2,10 +2,14 @@ import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { TaskContext } from "../context/TaskContext";
 
-export const TaskList = ({ tasks, img }) => {
+export const TaskList = ({ img }) => {
 
-   const { deleteTask } = useContext( TaskContext );
+   const { tasks, deleteTask } = useContext( TaskContext );
    const location = useLocation();
+
+
+   const tasksCompleted = tasks.filter( task => task.done === true);
+   const tasksPending = tasks.filter( task => task.done === false);
 
 
    const onBtnClick = ( task ) => {
@@ -15,7 +19,7 @@ export const TaskList = ({ tasks, img }) => {
 
    return (
       <ul className="list-group">
-         { tasks.map( task => (
+         {( ( location.pathname === '/' ) ? tasksPending : tasksCompleted ).map( task => (
             <li 
                className="list-group-item d-flex justify-content-between align-items-center"
                key={ task.id }>
@@ -32,7 +36,7 @@ export const TaskList = ({ tasks, img }) => {
                               </button>
                            </>
 
-                        : <del> {task.description} </del>
+                        : <del> { task.description } </del>
                   }
 
             </li>
