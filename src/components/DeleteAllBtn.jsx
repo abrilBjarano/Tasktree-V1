@@ -10,7 +10,7 @@ export const DeleteAllBtn = () => {
          <button
             onClick={ deleteCompleted }
             className="btn btn-danger">
-            Delete all
+               Delete all
          </button>
       </div>
    )
