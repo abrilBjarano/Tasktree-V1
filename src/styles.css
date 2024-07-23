@@ -12,3 +12,10 @@
    }
 } */
 
+body {
+   background-color: rgb(97, 126, 97);
+}
+
+.navbar-yellow {
+   background-color: #f8de6c !important;
+ }

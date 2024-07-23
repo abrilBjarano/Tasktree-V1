@@ -10,7 +10,7 @@ export const Navbar = () => {
    };
 
    return (
-      <nav className="navbar navbar-expand bg-body-tertiary rounded-3 mb-4">
+      <nav className="navbar navbar-expand bg-body-tertiary rounded-bottom mb-4 navbar-yellow">
          <div className="d-flex justify-content-center">
 
             <a className="navbar-brand d-flex align-items-center mx-4">

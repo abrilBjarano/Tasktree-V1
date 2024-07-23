@@ -12,7 +12,8 @@ export const Tasktree = () => {
          <Toaster
             richColors  
             expand={ false }
-            position="bottom-center" />
+            position="bottom-center"
+         />
 
          <Navbar/>
 
