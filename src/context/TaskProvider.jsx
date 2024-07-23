@@ -53,8 +53,31 @@ export const TaskProvider = ({ children }) => {
    };
 
 
+   const totalTasks = () => {
+      return tasks.length;
+   };
+
+   const pendingTasks = () => {
+      return tasks.filter( task => !task.done ).length;
+   };
+
+   const completedTasks = () => {
+      return tasks.filter( task => task.done ).length;
+   };
+
+
    return (
-      <TaskContext.Provider value={{ tasks, addTask, deleteTask, deleteCompleted, toggleTask }}>
+      <TaskContext.Provider value={{ 
+         tasks,
+         addTask,
+         deleteTask,
+         deleteCompleted,
+         toggleTask,
+         totalTasks,
+         pendingTasks,
+         completedTasks
+
+       }}>
          { children }
       </TaskContext.Provider>
    )

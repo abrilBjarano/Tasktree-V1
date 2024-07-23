@@ -6,7 +6,7 @@ import { TaskItem } from "./TaskItem";
 
 export const TaskList = ({ img }) => {
 
-   const { tasks, deleteTask, toggleTask } = useContext( TaskContext );
+   const { tasks, deleteTask, toggleTask, totalTasks, pendingTasks, completedTasks } = useContext( TaskContext );
    const { listContainerStyle, totalTasksStyle, containerStyle, itemStyle } = usePaperBackground( img );
    const location = useLocation();
 
@@ -19,7 +19,7 @@ export const TaskList = ({ img }) => {
    return (
       <div style={ listContainerStyle }>
 
-      <h6 style={ totalTasksStyle }>Total tasks: X. Pending tasks: Y. Completed tasks: W</h6>
+      <h6 style={ totalTasksStyle }>Total tasks: { totalTasks() }. Pending tasks: { pendingTasks() }. Completed tasks: { completedTasks() }</h6>
 
          <div style={ containerStyle }>
             <ul className="list-group">
