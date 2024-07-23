@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { TaskContext } from "../context/TaskContext";
+import { toast } from 'sonner';
 
 export const TaskList = ({ img }) => {
 
@@ -32,12 +33,19 @@ export const TaskList = ({ img }) => {
                         ?
                            <>
                               <div 
-                                 onClick={ () => onClickTask( task )}>
+                                 onClick={ () => {
+                                    onClickTask( task );
+                                    toast.success('Task completed');
+                                 }}
+                              >
                                     { task.description }
                               </div>
 
                               <button
-                                 onClick={ () => onBtnClick( task ) }
+                                 onClick={ () => {
+                                    onBtnClick( task );
+                                    toast.info('Task deleted succesfully');
+                                 }}
                                  className="btn btn-danger">
                                     X
                               </button>
@@ -45,7 +53,7 @@ export const TaskList = ({ img }) => {
 
                         : <del onClick={ () => onClickTask( task )}> 
                               { task.description } 
-                           </del>
+                          </del>
                   }
 
             </li>

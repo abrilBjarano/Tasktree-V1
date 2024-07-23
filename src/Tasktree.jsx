@@ -2,14 +2,17 @@ import { Navbar } from "./components/Navbar";
 import { TaskProvider } from "./context/TaskProvider";
 import { TaskRoutes } from "./routes/TaskRoutes";
 import './styles.css';
+import { Toaster } from 'sonner';
 
 export const Tasktree = () => {
 
-   
-
-
    return (
       <TaskProvider>
+
+         <Toaster
+            richColors  
+            expand={ false }
+            position="bottom-center" />
 
          <Navbar/>
 
@@ -19,5 +22,5 @@ export const Tasktree = () => {
          </div>
 
       </TaskProvider>
-   )
+   ) 
 }

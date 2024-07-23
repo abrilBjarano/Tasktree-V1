@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { TaskContext } from "../context/TaskContext";
+import { toast } from 'sonner';
+
 
 export const DeleteAllBtn = () => {
 
@@ -8,7 +10,10 @@ export const DeleteAllBtn = () => {
    return (
       <div className="d-flex justify-content-end mb-4">
          <button
-            onClick={ deleteCompleted }
+            onClick={ () => {
+               deleteCompleted();
+               toast('Deleted all completed tasks');
+            }}
             className="btn btn-danger">
                Delete all
          </button>
