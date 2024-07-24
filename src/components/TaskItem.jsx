@@ -16,8 +16,8 @@ export const TaskItem = ({ task, itemStyle, deleteTask, toggleTask }) => {
    return (
       <h5
          className="list-group-item d-flex justify-content-between align-items-center"
-         style={ itemStyle }
-         key={ task.id }>
+         style={ itemStyle }>
+            
             {( location.pathname === '/')
                   ?
                      <>

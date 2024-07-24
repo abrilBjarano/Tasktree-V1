@@ -1,13 +1,20 @@
 import { useEffect, useReducer } from "react";
 import { TaskContext } from "./TaskContext";
 import { taskReducer } from "../taskReducer";
+import { v4 as uuidv4 } from 'uuid';
 
 
 const initialState = [
-   { id: new Date().getTime() * 3, description: 'Crear Tasktree', done: false },
-   { id: new Date().getTime() * 2, description: 'Ir a correr', done: false },
-   { id: new Date().getTime() * 5, description: 'Lavar mi Miata', done: true },
-   { id: new Date().getTime() * 4, description: 'Prepara viaje a Brazil', done: true }
+   { id: uuidv4(), description: 'Comprar ramo de flores', done: false },
+   { id: uuidv4(), description: 'Ir a correr', done: false },
+   { id: uuidv4(), description: 'Lavar mi Miata', done: false },
+   { id: uuidv4(), description: 'Prepara viaje a Brazil', done: true },
+   { id: uuidv4(), description: 'Crear Tasktree', done: true },
+   { id: uuidv4(), description: 'Subir Tasktree a Github', done: true },
+   { id: uuidv4(), description: 'Leer Neville Goddard', done: true },
+   { id: uuidv4(), description: 'Dar mantenimiento a las bicis', done: true },
+   { id: uuidv4(), description: 'Subir Tasktree a Github pages', done: true },
+   { id: uuidv4(), description: 'Comprar huevito Kinder', done: true },
 ]
 
 

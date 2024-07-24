@@ -24,7 +24,8 @@ export const TaskList = ({ img }) => {
          <div style={ containerStyle }>
             <ul className="list-group">
                {( ( location.pathname === '/' ) ? tasksPending : tasksCompleted ).map( task => (
-                  <TaskItem 
+                  <TaskItem
+                     key={ task.id }
                      deleteTask={ deleteTask }
                      toggleTask={ toggleTask }
                      task={ task }
