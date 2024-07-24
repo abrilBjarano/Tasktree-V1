@@ -4,6 +4,7 @@ import { TaskContext } from "../context/TaskContext";
 import { usePaperBackground } from "../hooks/usePaperBackground";
 import { TaskItem } from "./TaskItem";
 
+
 export const TaskList = ({ img }) => {
 
    const { tasks, deleteTask, toggleTask, totalTasks, pendingTasks, completedTasks } = useContext( TaskContext );
@@ -13,7 +14,6 @@ export const TaskList = ({ img }) => {
 
    const tasksCompleted = tasks.filter( task => task.done === true );
    const tasksPending = tasks.filter( task => task.done === false );
-
 
 
    return (
@@ -31,6 +31,15 @@ export const TaskList = ({ img }) => {
                      itemStyle={ itemStyle } />
                ))}
             </ul>
+               
+            { 
+               ( location.pathname === '/' && tasksPending.length === 0 )
+                  ? <h1 className="text-center text-primary">No tasks to show</h1>
+                  : ( location.pathname === '/completed' && tasksCompleted.length === 0 )
+                     ? <h1 className="text-center text-primary">Empty</h1>
+                     : null
+            }
+
          </div>
       </div>
    )

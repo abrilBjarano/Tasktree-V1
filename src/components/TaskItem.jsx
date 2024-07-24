@@ -40,7 +40,7 @@ export const TaskItem = ({ task, itemStyle, deleteTask, toggleTask }) => {
                      </>
                   : <del onClick={ () => onClickTask( task )}>
                         { task.description }
-                     </del>
+                    </del>
             }
       </h5>
    )
