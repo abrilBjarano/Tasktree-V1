@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useRoutesInfo } from "../hooks/useRoutesInfo";
+import tree from "../assets/tree.png"
 
 export const Navbar = () => {
 
@@ -16,7 +17,7 @@ export const Navbar = () => {
             <a className="navbar-brand d-flex align-items-center mx-4">
                <img 
                   className="me-2"
-                  src="../../tree.png" alt="Logo" width="30" height="30"/>
+                  src={ tree } alt="Logo" width="30" height="30"/>
                Tasktree
             </a>
          
